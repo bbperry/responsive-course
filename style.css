@@ -24,6 +24,10 @@ body {
   font-size: 1.315;
 }
 
+img {
+  max-width: 100%;
+}
+
 .hero {
   background: #23424a;
   color: white;
@@ -38,6 +42,11 @@ body {
   margin-bottom: 3em;
 }
 
+.hero__img {
+  width: 32%;
+  align-self: flex-start;
+}
+
 .container {
   width: 80%;
   max-width: 1100px;
@@ -46,15 +55,13 @@ body {
 
 .row {
   display: flex;
+  justify-content: space-between;
 }
 
 .col {
   width: 100%;
 }
 
-.col + .col {
-  margin-left: 2rem;
-}
 
 .hero__text {
   width: 60%;
@@ -81,7 +88,7 @@ body {
 }
 
 .accent-text {
-  color: #87629A;
+  color: #136C72;
 }
 
 .upper {
@@ -90,14 +97,18 @@ body {
 }
 
 .lower {
-  background: #23424a;
+  background: #136C72;
   color: white;
-  padding: 3em 0;
+  padding: 2em;
   text-align: center;
+  flex-direction: column;
+  /* align-self: flex-end; */
 }
 
-@media (max-width: 45em) {
-  .row {
-    flex-direction: column;
-  }
+.lower-section {
+  padding: 3em 0;
+}
+
+.left-side{
+  margin-right: 2rem;
 }
