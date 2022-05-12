@@ -1,33 +1,103 @@
 /* INSTRUCTIONS
  *
- * 1) Limit the total width of
- *    the .intro-conent to about half
- *    of it's parent
+ * 1) Keep the text inside .intro-content
+ *    in the same place, but have the background
+ *    extend from one side of the viewport
+ *    to the other, no matter how wide or narrow
+ *    the browser is.
  *
- * 2) Stop the text from overflowing
- *    out the bottom at small screen
- *    widths
+ * 2) Limit the maximum width of the text in the
+ *    bottom area.
  *
  * You may modify the HTML if needed
+ * (you probably should for this challenge)
  *
  */
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.315;
+}
+
+.hero {
+  background: #23424a;
+  color: white;
+  padding: 100px 0;
+}
+
+.hero__text > h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  margin-bottom: 3em;
 }
 
 .container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col {
+  width: 100%;
+}
+
+.col + .col {
+  margin-left: 2rem;
+}
+
+.hero__text {
+  width: 60%;
+}
+
+.hero p {
+  margin-bottom: 3em;
+}
+
+
+
+.btn {
+  text-decoration: none;
+  color: #23424a;
+  background-color: aqua;
+  border-radius: 100px;
+  padding: .75em 2em;
+  font-weight: 900;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: .75;
+}
+
+.accent-text {
+  color: #87629A;
+}
+
+.upper {
+  padding: 3em;
+  text-align: center;
+}
+
+.lower {
   background: #23424a;
   color: white;
+  padding: 3em 0;
+  text-align: center;
+}
 
-  width: 80%;
-  margin: 0 auto;
-
-  padding: 2em;
-  height: 300px;
+@media (max-width: 45em) {
+  .row {
+    flex-direction: column;
+  }
 }
